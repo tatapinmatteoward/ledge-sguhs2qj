@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Home - Ledge & Lane Journal";
+const pageDescription = "Discover the rhythm of skateboarding culture through Ledge & Lane Journal. Explore stories, insights, and the urban pulse that defines the skate world in a sophisticated minimalist style.";
+const featuredStories = [
+  {
+    id: 1,
+    title: "The Evolution of Street Culture",
+    excerpt: "How skateboarding shaped modern urban expression",
+    category: "Culture"
+  },
+  {
+    id: 2,
+    title: "Legendary Ramps Through Time",
+    excerpt: "Exploring the spots that defined a generation",
+    category: "History"
+  },
+  {
+    id: 3,
+    title: "Voices from the Scene",
+    excerpt: "Interviews with skaters changing the game",
+    category: "Profiles"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-map-marker-alt",
+    title: "Iconic Spots",
+    description: "From hidden alleys to legendary ramps shaping history"
+  },
+  {
+    icon: "fas fa-comments",
+    title: "Cultural Shifts",
+    description: "How skate culture influences fashion, music, and social change"
+  },
+  {
+    icon: "fas fa-users",
+    title: "Voices of the Scene",
+    description: "Interviews with pros, amateurs, and urban artists"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-gray-900 to-gray-800 py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Welcome to Ledge & Lane Journal
+        </h1>
+        <div class="h-1 w-24 bg-emerald-500 mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 font-light">
+          Chronicling the Pulse of Skateboarding Culture
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/stories" class="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition duration-300 transform hover:-translate-y-1">
+            Explore Stories
+          </a>
+          <a href="/about" class="px-8 py-3 bg-transparent border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white font-medium rounded-lg transition duration-300">
+            Our Mission
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+          <div class="md:w-1/2">
+            <div class="relative">
+              <div class="w-full h-80 bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl shadow-lg"></div>
+              <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-emerald-500 rounded-lg"></div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Urban Edge</h2>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Skateboarding isn't just about tricks and transitions; it's about navigating the grit and grace of city streets. Our journal dives deep into:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-emerald-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+                <span class="text-gray-700">Iconic Spots: From hidden ledges in forgotten alleys to legendary ramps shaping history</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+                <span class="text-gray-700">Cultural Shifts: How skate culture influences fashion, music, and social change</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+                <span class="text-gray-700">Voices of the Scene: Interviews with pros, amateurs, and urban artists</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">What We Cover</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Diving deep into the layers that make skate culture so compelling</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div class="text-4xl text-emerald-500 mb-4">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Stories -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Featured Stories</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Explore our latest insights into skate culture and urban life</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredStories.map((story) => (
+          <div key={story.id} class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="h-48 bg-gradient-to-r from-gray-700 to-gray-600 relative">
+              <div class="absolute top-4 right-4 bg-emerald-500 text-white text-sm font-bold px-3 py-1 rounded-full">
+                {story.category}
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">{story.title}</h3>
+              <p class="text-gray-300 mb-4">{story.excerpt}</p>
+              <a href="#" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center">
+                Read More
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/stories" class="inline-block px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition duration-300">
+          View All Stories
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Stay in the Loop</h2>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+          Join our community of urban explorers and skate culture enthusiasts. Get the latest stories delivered straight to your inbox.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-5 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition duration-300 whitespace-nowrap"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .hover-translate {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-translate:hover {
+    transform: translateY(-5px);
+  }
+
+  .gradient-border {
+    position: relative;
+    border-radius: 12px;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4ade80, #374151, #4ade80);
+    border-radius: 14px;
+    z-index: -1;
+    animation: borderAnimation 3s linear infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .feature-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+</style>

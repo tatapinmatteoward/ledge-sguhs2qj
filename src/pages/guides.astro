@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Guides to Skateboarding Mastery";
+const pageDescription = "Explore expert-curated guides on skateboarding techniques, gear selection, urban culture, and maintenance tips to elevate your ride in the Ledge & Lane Journal.";
+const guides = [
+  {
+    title: "Beginner Essentials",
+    description: "Start your journey with foundational knowledge",
+    items: [
+      {
+        title: "Ollie Fundamentals",
+        description: "Master the pop, slide, and level-out for effortless street tricks."
+      },
+      {
+        title: "Board Selection",
+        description: "Choose setups that match your style, from mini-decks for technical parks to cruisers for city cruising."
+      },
+      {
+        title: "Safety First",
+        description: "Essential gear like helmets and pads to skate confidently."
+      }
+    ]
+  },
+  {
+    title: "Advanced Techniques",
+    description: "Elevate your skills in the concrete jungle",
+    items: [
+      {
+        title: "Grind and Slide Mastery",
+        description: "Techniques for ledges, rails, and street obstacles."
+      },
+      {
+        title: "Transition Tricks",
+        description: "Master flip tricks, 360s, and technical street maneuvers."
+      },
+      {
+        title: "Street Education",
+        description: "Learn to read terrain, spot opportunities, and build your own flow."
+      }
+    ]
+  },
+  {
+    title: "Urban Culture",
+    description: "Immerse yourself in skateboarding's cultural landscape",
+    items: [
+      {
+        title: "Historical Roots",
+        description: "From surf culture to underground scenes, trace skateboarding's evolution."
+      },
+      {
+        title: "Community & Local Scenes",
+        description: "Connect with local spots, events, and skaters in your area."
+      },
+      {
+        title: "Art & Expression",
+        description: "How skate culture influences street art, fashion, and lifestyle."
+      }
+    ]
+  },
+  {
+    title: "Gear & Maintenance",
+    description: "Keep your board in peak condition for better performance",
+    items: [
+      {
+        title: "Deck Selection",
+        description: "Understanding wood types, construction, and deck characteristics."
+      },
+      {
+        title: "Wheel and Bearing Care",
+        description: "Maximize speed and durability with the right components."
+      },
+      {
+        title: "Tool & Repair Essentials",
+        description: "Basic techniques to maintain and upgrade your setup."
+      }
+    ]
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-gray-900 to-gray-800 pt-24 pb-32">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iI2UwZTBlMCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')] opacity-10"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            {pageTitle}
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            {pageDescription}
+          </p>
+          <div class="flex items-center text-gray-400">
+            <i class="fas fa-quote-left mr-2"></i>
+            <span class="italic">Chronicling the Pulse of Skateboarding Culture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Guides Section -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {guides.map((guide, index) => (
+          <div 
+            key={index}
+            class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100"
+          >
+            <div class="p-6">
+              <div class="flex items-start mb-4">
+                <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                  <i class={`fas fa-${index === 0 ? 'star' : index === 1 ? 'bolt' : index === 2 ? 'city' : 'wrench'} text-gray-700 text-xl`}></i>
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-gray-900 mb-2">{guide.title}</h2>
+                  <p class="text-gray-600">{guide.description}</p>
+                </div>
+              </div>
+              
+              <div class="space-y-4">
+                {guide.items.map((item, itemIndex) => (
+                  <div key={itemIndex} class="flex">
+                    <div class="mr-4 mt-1">
+                      <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900">{item.title}</h3>
+                      <p class="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-gray-800 to-gray-900 py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Ready to Take Your Ride to the Next Level?</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+          Join our community of skaters pushing the limits of what's possible. Get insider tips, exclusive content, and connect with fellow riders.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+            Explore More Guides
+          </button>
+          <button class="bg-transparent border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
+            Join Our Community
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .section-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>
+
+<script>
+  import { onMounted } from 'react';
+  
+  onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.section-card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>

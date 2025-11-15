@@ -1,0 +1,29 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-twitter', url: '#' },
+  { icon: 'fab fa-facebook', url: '#' },
+  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-linkedin', url: '#' }
+];
+---
+
+<footer class="bg-gray-800 text-gray-200 py-12">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <p class="text-lg font-light">&copy; {currentYear} Ledge & Lane Journal. All rights reserved.</p>
+      </div>
+      <div class="flex space-x-6">
+        {socialLinks.map((link) => (
+          <a href={link.url} class="text-gray-300 hover:text-green-400 transition-colors duration-300">
+            <i class={link.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+      <p>Designed with sophistication and urban minimalism in mind.</p>
+    </div>
+  </div>
+</footer>

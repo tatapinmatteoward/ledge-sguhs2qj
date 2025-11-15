@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Urban Skate Articles: Shred the Latest News and Reviews";
+const pageDescription = "Dive into the pulse of street skating with Urban Board Collective's articles. From gritty news updates and in-depth gear reviews to community spotlights, ride the urban edge with our latest stories.";
+
+const featuredArticles = [
+  {
+    id: 1,
+    title: "Neon Nights: Top 5 Urban Skate Spots in the City",
+    excerpt: "Discover hidden gems under flickering streetlights where the pros drop in. From abandoned warehouses to bustling plazas, these locations are lit for late-night lines.",
+    category: "Spots",
+    readTime: "5 min read",
+    image: "spot"
+  },
+  {
+    id: 2,
+    title: "Gear Grind: Reviewing the Latest Deck Tech from Sector 9",
+    excerpt: "We put the new high-performance boards through urban abuse—ollies over curbs, manuals on sidewalks. Is this the edge you've been chasing?",
+    category: "Reviews",
+    readTime: "8 min read",
+    image: "gear"
+  },
+  {
+    id: 3,
+    title: "Community Pulse: Stories from the Concrete Jungle",
+    excerpt: "Behind the scenes of our most iconic skate sessions. Meet the riders making waves in the underground scene.",
+    category: "Community",
+    readTime: "6 min read",
+    image: "community"
+  }
+];
+
+const latestArticles = [
+  {
+    id: 4,
+    title: "The Rise of Street Art in Skate Culture",
+    excerpt: "How graffiti and skateboarding are merging to create a new urban aesthetic.",
+    category: "Culture",
+    readTime: "4 min read"
+  },
+  {
+    id: 5,
+    title: "From Park to Street: The Evolution of Skate Tricks",
+    excerpt: "Tracking the progression of skateboarding techniques from the early days to today.",
+    category: "History",
+    readTime: "7 min read"
+  },
+  {
+    id: 6,
+    title: "Skateboard Maintenance: A Pro's Guide to Keeping Your Ride Clean",
+    excerpt: "Essential tips to prolong the life of your board and keep it looking sharp.",
+    category: "How-To",
+    readTime: "5 min read"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    {/* Hero Section */}
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiMwMGY1ZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
+      
+      <div class="container mx-auto px-4 py-20 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-block bg-[#00f5ff] text-gray-900 px-4 py-1 rounded-full mb-4 font-bold tracking-wider">
+            <i class="fas fa-bolt mr-2"></i> URBAN EDGE
+          </div>
+          <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+            <span class="block">Ride the Urban</span>
+            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] to-cyan-300">Edge</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+            Dive into the pulse of street skating with Urban Board Collective's articles. From gritty news updates and in-depth gear reviews to community spotlights, ride the urban edge with our latest stories.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button class="bg-[#00f5ff] text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+              Explore Articles
+            </button>
+            <button class="border-2 border-[#00f5ff] text-[#00f5ff] font-bold px-8 py-3 rounded-full hover:bg-[#00f5ff] hover:text-gray-900 transition-all duration-300">
+              <i class="fas fa-newspaper mr-2"></i> Read Latest
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Featured Articles */}
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between mb-12">
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] to-cyan-300">Featured Shreds</span>
+          </h2>
+          <a href="#" class="text-[#00f5ff] hover:text-cyan-300 font-bold flex items-center">
+            View All <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featuredArticles.map((article) => (
+            <article 
+              key={article.id}
+              class="group relative rounded-xl overflow-hidden bg-gray-800 border border-gray-700 hover:border-[#00f5ff] transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div class="h-48 bg-gradient-to-r from-[#00f5ff] to-cyan-500 relative">
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                  <span class="text-white text-4xl opacity-80">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </span>
+                </div>
+                <div class="absolute top-4 right-4 bg-[#00f5ff] text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
+                  {article.category}
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-black mb-3 group-hover:text-[#00f5ff] transition-colors duration-300">
+                  {article.title}
+                </h3>
+                <p class="text-gray-400 mb-4 line-clamp-2">
+                  {article.excerpt}
+                </p>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-gray-500">{article.readTime}</span>
+                  <button class="text-[#00f5ff] hover:text-cyan-300 flex items-center font-bold">
+                    Read More <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Latest Articles */}
+    <section class="py-16 bg-gray-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-black mb-12 tracking-tight text-center">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] to-cyan-300">Latest Shreds</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {latestArticles.map((article) => (
+            <article 
+              key={article.id}
+              class="group relative rounded-xl overflow-hidden bg-gray-800 border border-gray-700 hover:border-[#00f5ff] transition-all duration-300"
+            >
+              <div class="md:flex">
+                <div class="md:w-1/3 bg-gradient-to-br from-[#00f5ff] to-cyan-500 p-6 flex items-center justify-center">
+                  <div class="bg-black bg-opacity-20 rounded-full w-24 h-24 flex items-center justify-center">
+                    <span class="text-3xl text-white">
+                      <i class="fas fa-newspaper"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="p-6 md:w-2/3">
+                  <div class="flex justify-between items-start mb-3">
+                    <span class="bg-[#00f5ff] text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
+                      {article.category}
+                    </span>
+                    <span class="text-sm text-gray-500">{article.readTime}</span>
+                  </div>
+                  <h3 class="text-xl font-black mb-3 group-hover:text-[#00f5ff] transition-colors duration-300">
+                    {article.title}
+                  </h3>
+                  <p class="text-gray-400 mb-4 line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                  <button class="text-[#00f5ff] hover:text-cyan-300 flex items-center font-bold">
+                    Read Full Story <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center">
+          <button class="border-2 border-[#00f5ff] text-[#00f5ff] font-bold px-8 py-3 rounded-full hover:bg-[#00f5ff] hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+            Load More Articles
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {/* Newsletter */}
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+          <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiMwMGY1ZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-10"></div>
+          
+          <div class="relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-4">
+              Stay <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] to-cyan-300">Connected</span>
+            </h2>
+            <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+              Join our urban edge community and get the latest articles, spots, and gear reviews delivered straight to your inbox.
+            </p>
+            
+            <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                class="flex-grow bg-gray-800 border border-gray-700 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#00f5ff] focus:border-transparent"
+              />
+              <button 
+                type="submit"
+                class="bg-[#00f5ff] text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-cyan-300 transition-all duration-300 whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+            
+            <p class="text-gray-500 text-sm mt-4">
+              No spam. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  @keyframes neon-glow {
+    0%, 100% {
+      text-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff, 0 0 15px #00f5ff;
+    }
+    50% {
+      text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff, 0 0 30px #00f5ff;
+    }
+  }
+  
+  .animate-neon {
+    animation: neon-glow 2s ease-in-out infinite;
+  }
+</style>

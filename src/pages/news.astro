@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "News";
+const pageDescription = "Dive into the latest updates from the skateboarding world. From groundbreaking events and pro rider achievements to cultural shifts in urban skate scenes, Ledge & Lane Journal keeps you at the forefront of the action.";
+
+const featuredStory = {
+  title: "Olympic Dreams on Asphalt",
+  date: "October 15, 2023",
+  author: "Alex Rivera",
+  content: "As the Paris 2024 Olympics approach, skateboarders worldwide are pushing boundaries. Nyjah Huston, the reigning king of street skateboarding, recently dominated the X Games with a flawless 50-50 grind that left the crowd roaring. But it's not just about medals—it's about the raw, unfiltered passion that defines our community.",
+  highlights: [
+    "Huston's comeback after a major injury",
+    "Emerging talents from Brazil stealing the spotlight",
+    "Debates on skateboarding's evolution in competitive formats"
+  ]
+};
+
+const newsItems = [
+  {
+    id: 1,
+    title: "New Street League Season Announced",
+    excerpt: "The upcoming season promises unprecedented competition and new venues.",
+    date: "October 10, 2023",
+    category: "Events"
+  },
+  {
+    id: 2,
+    title: "Local Skatepark Gets Major Upgrade",
+    excerpt: "Community-driven funding brings modern amenities to neighborhood spot.",
+    date: "October 8, 2023",
+    category: "Culture"
+  },
+  {
+    id: 3,
+    title: "Rising Star: Maya Chen's Journey",
+    excerpt: "From underground spot to international recognition, Maya's story is inspiring.",
+    date: "October 5, 2023",
+    category: "Profiles"
+  },
+  {
+    id: 4,
+    title: "Sustainable Skateboard Manufacturing",
+    excerpt: "Eco-friendly materials reshape the industry's environmental impact.",
+    date: "October 2, 2023",
+    category: "Industry"
+  },
+  {
+    id: 5,
+    title: "Women in Street Skateboarding",
+    excerpt: "A deep dive into the growing presence and influence of female skaters.",
+    date: "September 28, 2023",
+    category: "Culture"
+  },
+  {
+    id: 6,
+    title: "Tech Revolution: Smart Skateboards",
+    excerpt: "New innovations bring data tracking and connectivity to the board.",
+    date: "September 25, 2023",
+    category: "Technology"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative">
+    {/* Hero Section */}
+    <div class="bg-gradient-to-r from-gray-900 to-gray-800 py-24 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <span class="inline-block px-4 py-1 bg-gray-800 rounded-full text-accent font-medium mb-4">
+            <i class="fas fa-newspaper mr-2"></i> Ledge & Lane Journal
+          </span>
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            News
+          </h1>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Dive into the latest updates from the skateboarding world. From groundbreaking events and pro rider achievements to cultural shifts in urban skate scenes, Ledge & Lane Journal keeps you at the forefront of the action.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* Tagline Section */}
+    <div class="bg-gray-800 py-6">
+      <div class="container mx-auto px-4">
+        <p class="text-center text-gray-400 font-light italic">
+          Chronicling the Pulse of Skateboarding Culture
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Featured Story Section */}
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center mb-8">
+          <div class="h-1 w-20 bg-accent mr-4"></div>
+          <h2 class="text-2xl font-bold text-gray-900">Featured Story</h2>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+          <div class="p-6 md:p-8">
+            <div class="flex flex-wrap items-center justify-between mb-4">
+              <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                <i class="fas fa-calendar-alt mr-2"></i> {featuredStory.date}
+              </span>
+              <span class="inline-block px-3 py-1 bg-accent text-white text-sm rounded-full">
+                <i class="fas fa-user mr-2"></i> {featuredStory.author}
+              </span>
+            </div>
+            
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">{featuredStory.title}</h3>
+            
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">{featuredStory.content}</p>
+            
+            <div class="mt-8">
+              <h4 class="text-xl font-semibold text-gray-900 mb-4">Key Highlights</h4>
+              <ul class="space-y-3">
+                {featuredStory.highlights.map((highlight, index) => (
+                  <li key={index} class="flex items-start">
+                    <i class="fas fa-chevron-right text-accent mt-2 mr-3"></i>
+                    <span class="text-gray-700">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Latest News Grid */}
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-12">
+        <div class="h-1 w-20 bg-accent mr-4"></div>
+        <h2 class="text-3xl font-bold text-gray-900">Latest Skateboarding News</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {newsItems.map((item) => (
+          <article key={item.id} class="bg-gray-50 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="inline-block px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full">
+                  {item.category}
+                </span>
+                <span class="text-gray-500 text-sm">
+                  <i class="fas fa-calendar mr-1"></i> {item.date}
+                </span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p class="text-gray-600 mb-4">{item.excerpt}</p>
+              
+              <button class="flex items-center text-accent font-medium group">
+                Read more
+                <i class="fas fa-arrow-right ml-2 text-sm group-hover:translate-x-1 transition-transform duration-200"></i>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors duration-300 shadow-lg hover:shadow-xl">
+          View All News
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Stay Connected to Skate Culture</h2>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        Subscribe to our newsletter and never miss an update on the latest skateboarding trends, events, and stories.
+      </p>
+      <div class="max-w-md mx-auto flex">
+        <input 
+          type="email" 
+          placeholder="Your email address" 
+          class="flex-grow px-6 py-4 rounded-l-full text-gray-900 focus:outline-none"
+        />
+        <button class="px-8 py-4 bg-accent text-gray-900 font-bold rounded-r-full hover:bg-green-400 transition-colors duration-300">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+  }
+  
+  .pulse-border {
+    animation: pulse 2s infinite;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+</style>

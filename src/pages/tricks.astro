@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Master the Streets: Essential Skateboard Tricks";
+const pageDescription = "Dive into the world of street skateboarding with our comprehensive guide to essential tricks. From ollies to grinds, learn techniques, tips, and progressions to elevate your urban shredding skills on Street Spins Weekly.";
+const tricks = [
+  {
+    name: "Ollie",
+    description: "The king of all tricks. Pop the tail with your back foot while sliding your front foot up to level the board.",
+    tip: "Practice on flat ground—aim for height before distance.",
+    difficulty: "Beginner"
+  },
+  {
+    name: "Manual",
+    description: "Balance on your back two wheels like a tightrope walk. Keep your weight centered and eyes forward.",
+    tip: "Start with short sessions to build balance.",
+    difficulty: "Beginner"
+  },
+  {
+    name: "Kickflip",
+    description: "Lift the board with your front foot while flipping it with your back foot.",
+    tip: "Focus on timing between foot movements.",
+    difficulty: "Intermediate"
+  },
+  {
+    name: "Grind",
+    description: "Slide along a rail or ledge with your wheels.",
+    tip: "Keep your weight back and stay low.",
+    difficulty: "Intermediate"
+  },
+  {
+    name: "Tre flip",
+    description: "A 360-degree rotation of the board while flipping it.",
+    tip: "Practice your pop and timing before attempting.",
+    difficulty: "Advanced"
+  },
+  {
+    name: "Laser",
+    description: "A complex trick involving a 540-degree spin of the board.",
+    tip: "Start with smaller spins and build up to 540s.",
+    difficulty: "Expert"
+  }
+];
+
+const difficultyColors = {
+  "Beginner": "bg-green-500",
+  "Intermediate": "bg-yellow-500",
+  "Advanced": "bg-orange-500",
+  "Expert": "bg-red-500"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    {/* Hero Section */}
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 z-10"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjAuNSIgZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
+      
+      <div class="relative z-20 container mx-auto px-4 py-20 md:py-32">
+        <div class="max-w-4xl">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-skating text-accent text-2xl mr-3"></i>
+            <span class="bg-accent text-slate-900 px-3 py-1 rounded-full text-sm font-bold">WEEKLY INSIGHTS</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Master the Streets: <span class="text-accent">Essential Skateboard Tricks</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl">
+            Dive into the world of street skateboarding with our comprehensive guide to essential tricks. 
+            From ollies to grinds, learn techniques, tips, and progressions to elevate your urban shredding skills.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button class="bg-accent hover:bg-opacity-90 text-slate-900 font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105 flex items-center">
+              <i class="fas fa-play mr-2"></i> Watch Tutorials
+            </button>
+            <button class="bg-transparent border-2 border-accent hover:bg-accent hover:bg-opacity-20 text-accent font-bold py-3 px-6 rounded-full transition-all">
+              <i class="fas fa-book mr-2"></i> Skill Progression
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Intro Section */}
+    <section class="py-16 bg-slate-800/50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            <i class="fas fa-user-friends text-accent mr-3"></i> Welcome to Street Tricks Mastery
+          </h2>
+          <p class="text-xl text-slate-300 mb-8">
+            Hey, street skaters! At <span class="text-accent font-bold">Street Spins Weekly</span>, we're all about that dynamic urban vibe. 
+            Whether you're a newbie grinding your first curb or a pro flipping through the city, our tricks page is your go-to 
+            for weekly insights into skateboarding culture.
+          </p>
+          <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700 inline-block">
+            <p class="text-lg italic">
+              "The street is your gym, your skateboard is your tool, and these tricks are your language."
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-accent transition-all">
+            <div class="flex items-center mb-4">
+              <div class="bg-accent text-slate-900 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-arrow-up"></i>
+              </div>
+              <h3 class="text-2xl font-bold">Beginner Tricks: Build Your Foundation</h3>
+            </div>
+            <p class="text-slate-300 mb-4">
+              Start simple and build confidence. These are the building blocks of street skating.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Master the basic stance and balance</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Focus on consistent practice</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Develop a strong connection with your board</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-accent transition-all">
+            <div class="flex items-center mb-4">
+              <div class="bg-accent text-slate-900 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3 class="text-2xl font-bold">Advanced Techniques: Push Your Limits</h3>
+            </div>
+            <p class="text-slate-300 mb-4">
+              Once you've mastered the basics, it's time to dominate the streets with advanced flair.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                <span>Combine multiple tricks in sequences</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                <span>Practice in varied urban environments</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                <span>Develop signature style elements</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Tricks Grid */}
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <i class="fas fa-star text-accent mr-3"></i> Essential Skateboarding Tricks
+          </h2>
+          <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+            Master these fundamental moves to build your urban skating repertoire. Each trick comes with a professional tip to accelerate your progress.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tricks.map((trick, index) => (
+            <div 
+              key={index} 
+              class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden border border-slate-700 hover:border-accent transition-all transform hover:-translate-y-2 duration-300"
+            >
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <h3 class="text-2xl font-bold">{trick.name}</h3>
+                  <span class={`px-3 py-1 rounded-full text-xs font-bold text-white ${difficultyColors[trick.difficulty]}`}>
+                    {trick.difficulty}
+                  </span>
+                </div>
+                <p class="text-slate-300 mb-6">{trick.description}</p>
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-700">
+                  <p class="flex items-start">
+                    <i class="fas fa-lightbulb text-accent mt-1 mr-2"></i>
+                    <span class="italic">{trick.tip}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="px-6 py-4 bg-slate-900/30 border-t border-slate-700 flex justify-between items-center">
+                <span class="text-sm text-slate-400">Difficulty Level</span>
+                <button class="text-accent hover:text-accent/80 transition-colors">
+                  <i class="fas fa-play-circle mr-2"></i> Video Guide
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Take Your Street Game to the Next Level?
+        </h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+          Join our community of urban shredders and get access to exclusive tutorials, 
+          trick progression guides, and weekly challenges designed to push your limits.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-accent hover:bg-opacity-90 text-slate-900 font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 flex items-center justify-center">
+            <i class="fas fa-user-plus mr-3"></i> Join the Street Crew
+          </button>
+          <button class="bg-transparent border-2 border-accent hover:bg-accent hover:bg-opacity-20 text-accent font-bold py-4 px-8 rounded-full text-lg transition-all">
+            <i class="fas fa-calendar-alt mr-3"></i> View Weekly Challenges
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .difficulty-badge {
+    transition: all 0.3s ease;
+  }
+
+  .difficulty-badge:hover {
+    transform: scale(1.05);
+  }
+</style>
